@@ -79,3 +79,40 @@ function largestOfFour(arr) {
 
   console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
   console.log(largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]));
+
+// 6. Confirm the Ending
+
+// First attempt - does not work with more than one letter
+// function confirmEnding(str, target) {
+//     let arrStr = str.split('');
+//     let lastNum = arrStr.length - 1;
+//     let lastLetter = arrStr[lastNum];
+//     if (target === lastLetter) {
+//         return true
+//     } else {
+//         return false
+//     }
+//   }
+  
+  console.log(confirmEnding("Bastian", "n"));
+
+  function confirmEnding(str, target) {
+      if (str.substr(-target.length) === target) {
+          return true;
+      } else {
+          return false;
+      }
+  };
+
+// 7. Repeat a String Repeat a String
+
+function repeatStringNumTimes(str, num) {
+    let repeatedStr = '';
+    while (num > 0) {
+        repeatedStr += str;
+        num--;
+    }
+    return repeatedStr;
+  }
+  
+  console.log(repeatStringNumTimes("abc", 3));

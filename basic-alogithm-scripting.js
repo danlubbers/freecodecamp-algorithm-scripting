@@ -116,3 +116,17 @@ function repeatStringNumTimes(str, num) {
   }
   
   console.log(repeatStringNumTimes("abc", 3));
+
+// 8. Truncate a string
+
+function truncateString(str, num) {  
+    if(str.length > num) {
+        return str.split('').slice(0, num).join('') + '...';
+    } else {
+        return str;
+    }
+  }
+  
+  console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+  console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11));
+  console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length));

@@ -130,3 +130,46 @@ function truncateString(str, num) {
   console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
   console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11));
   console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length));
+
+// 9. Basic Algorithm Scripting: Finders Keepers
+
+function findElement(arr, func) {
+    return arr.find((num) => { return func(num)});
+  }
+
+console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+
+// 10. Scripting: Boo who?
+
+function booWho(bool) {
+    return typeof bool === 'boolean';
+  }
+  
+  console.log(booWho(null));
+  console.log(booWho(true));
+  console.log(booWho(false));
+  console.log(booWho([1, 2, 3]));
+
+// 11. Title Case a Sentence
+
+// function titleCase(str) {
+//     str = str.toLowerCase();
+//     let arr = str.split(' ');
+
+//     for (let i = 0; i < arr.length; i++) {
+//         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1)
+//     }
+//     str = arr.join(' ')
+//     return str;
+//   }
+
+//  Can also use ES6 .map method
+function titleCase(str) {
+    return str.toLowerCase().split(' ').map(word => {
+        return (word.charAt(0).toUpperCase() + word.slice(1));
+    }).join(' ');
+}
+  
+  console.log(titleCase("I'm a little tea pot"));
+  console.log(titleCase("sHoRt AnD sToUt"));
+  

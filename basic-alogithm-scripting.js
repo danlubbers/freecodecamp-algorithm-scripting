@@ -183,3 +183,58 @@ function frankenSplice(arr1, arr2, n) {
   }
   
   console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+
+// 13. Falsy Bouncer
+
+function bouncer(arr) {
+    // Don't show a false ID to this bouncer.
+    let bool = arr.filter(e => e); // filter always returns Truthy values. You can convert with "Boolean(e)", but not necessary here
+    return bool;
+  }
+  
+  console.log(bouncer([7, "ate", "", false, 9]));
+
+// 14. Where do I belong
+
+function getIndexToIns(arr, num) {
+    // Find my place in this sorted array.
+    arr.push(num);
+    arr.sort(function(a, b) { return a - b});
+    return arr.indexOf(num)
+  }
+  
+  console.log(getIndexToIns([40, 60], 50));
+  console.log(getIndexToIns([5, 3, 20, 3], 5));
+
+// 15. Mutations
+
+function mutation(arr) {
+    let word1 = arr[0].toLowerCase();
+    let word2 = arr[1].toLowerCase();
+
+    for (let i = 0; i < word2.length; i++) {
+        if(!word1.includes(word2[i])) {
+            return false
+        }
+    }
+    return true;
+  }
+  
+  console.log(mutation(["hello", "hey"]));
+  console.log(mutation(["hello", "Hello"]));
+
+// 16. Chunky Monkey
+
+function chunkArrayInGroups(arr, size) {
+    // Break it up.
+    let results = [];
+
+    while(arr.length) {
+        results.push(arr.splice(0, size));
+    }
+
+    return results;
+  }
+  
+  console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
